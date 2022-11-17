@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Button from '../ui/button';
 import classes from './event-item.module.css';
 
 const EventItem = (props) => {
@@ -11,8 +12,8 @@ const EventItem = (props) => {
   return (
     <li className={classes.item}>
       <Image src={`/${image}`} alt={title} width="200" height="200" />
-      <div>
-        <div className={classes.content}>
+      <div className={classes.content}>
+        <div>
           <h2>{title}</h2>
           <div className={classes.date}>
             <time>{formattedDate}</time>
@@ -22,7 +23,7 @@ const EventItem = (props) => {
           </div>
         </div>
         <div className={classes.actions}>
-          <Link href={`/events/${id}`}>Explore Event</Link>
+          <Button href={`/events/${id}`}>Explore Event</Button>
         </div>
       </div>
     </li>
