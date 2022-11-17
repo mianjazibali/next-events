@@ -16,10 +16,6 @@ const FilteredEventsPage = () => {
 
   const filteredEvents = getFilteredEvents({ year, month });
 
-  if (!filteredEvents || filteredEvents.length === 0) {
-    return <p>No Events Found</p>;
-  }
-
   const date = new Date(year, month - 1);
 
   return (
