@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '../ui/button';
+import DateIcon from '../icons/date-icon';
+import AddressIcon from '../icons/address-icon';
+import LinkIcon from '../icons/arrow-right-icon';
 import classes from './event-item.module.css';
 
 const EventItem = (props) => {
@@ -16,14 +19,21 @@ const EventItem = (props) => {
         <div>
           <h2>{title}</h2>
           <div className={classes.date}>
+            <DateIcon />
             <time>{formattedDate}</time>
           </div>
           <div className={classes.address}>
+            <AddressIcon />
             <address>{formattedLocation}</address>
           </div>
         </div>
         <div className={classes.actions}>
-          <Button href={`/events/${id}`}>Explore Event</Button>
+          <Button href={`/events/${id}`}>
+            <span>Explore Event</span>
+            <span className={classes.icon}>
+              <LinkIcon />
+            </span>
+          </Button>
         </div>
       </div>
     </li>
