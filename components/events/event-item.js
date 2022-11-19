@@ -5,6 +5,7 @@ import DateIcon from '../icons/date-icon';
 import AddressIcon from '../icons/address-icon';
 import LinkIcon from '../icons/arrow-right-icon';
 import classes from './event-item.module.css';
+import ImageLoader from '../../helpers/image';
 
 const EventItem = (props) => {
   const { id, title, location, date, image } = props;
@@ -14,7 +15,13 @@ const EventItem = (props) => {
 
   return (
     <li className={classes.item}>
-      <Image src={`/${image}`} alt={title} width="200" height="200" />
+      <Image
+        loader={ImageLoader}
+        src={image}
+        alt={title}
+        width="200"
+        height="200"
+      />
       <div className={classes.content}>
         <div>
           <h2>{title}</h2>

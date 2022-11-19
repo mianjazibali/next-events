@@ -1,7 +1,9 @@
+import Image from 'next/image';
 import AddressIcon from '../icons/address-icon';
 import DateIcon from '../icons/date-icon';
 import LogisticsItem from './logistics-item';
 import classes from './event-logistics.module.css';
+import ImageLoader from '../../helpers/image';
 
 function EventLogistics(props) {
   const { date, address, image, imageAlt } = props;
@@ -12,11 +14,16 @@ function EventLogistics(props) {
     year: 'numeric',
   });
   const addressText = address.replace(', ', '\n');
-
   return (
     <section className={classes.logistics}>
       <div className={classes.image}>
-        <img src={`/${image}`} alt={imageAlt} />
+        <Image
+          loader={ImageLoader}
+          src={image}
+          alt={imageAlt}
+          width="200"
+          height="200"
+        />
       </div>
       <ul className={classes.list}>
         <LogisticsItem icon={DateIcon}>

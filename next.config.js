@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     loader: 'akamai',
-    path: '',
+    path: '/',
   },
   basePath: '/next-events',
   assetPrefix: '/next-events',
