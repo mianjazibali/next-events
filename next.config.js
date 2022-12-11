@@ -6,6 +6,16 @@ const nextConfig = {
     path: '/',
   },
   basePath: '/next-events',
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/next-events',
+        basePath: false,
+        permanent: false,
+      },
+    ];
+  },
   assetPrefix: '/next-events',
 };
 
