@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import ResultsTitle from '../../components/results-title/results-title';
 import EventList from '../../components/events/event-list';
@@ -9,6 +10,13 @@ const FilteredEventsPage = ({ year, month, events }) => {
 
   return (
     <>
+      <Head>
+        <title>Filtered Events</title>
+        <meta
+          name="description"
+          context="A list of filtered events"
+        />
+      </Head>
       <ResultsTitle date={date} />
       <EventList events={events} />
     </>
@@ -24,4 +32,3 @@ export async function getServerSideProps(context) {
 }
 
 export default FilteredEventsPage;
-

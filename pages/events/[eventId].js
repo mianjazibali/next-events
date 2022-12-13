@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import {
   getEventById,
@@ -10,6 +11,10 @@ import EventContent from '../../components/event-detail/event-content';
 const EventDetailPage = ({ event }) => {
   return (
     <>
+      <Head>
+        <title>{event.title}</title>
+        <meta name="description" context={event.description} />
+      </Head>
       <EventSummary title={event.title} />
       <EventLogistics
         image={event.image}
@@ -45,4 +50,3 @@ export async function getStaticPaths() {
 }
 
 export default EventDetailPage;
-

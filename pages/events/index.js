@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import EventSearch from '../../components/events/event-search';
 import EventList from '../../components/events/event-list';
 import { getAllEvents } from '../../helpers/api-utils';
@@ -11,6 +12,10 @@ const EventsPage = ({ events }) => {
 
   return (
     <>
+      <Head>
+        <title>All Events</title>
+        <meta name="description" context="A list of all events" />
+      </Head>
       <EventSearch onSearch={searchHandler} />
       <EventList events={events} />
     </>
@@ -23,4 +28,3 @@ export async function getStaticProps() {
 }
 
 export default EventsPage;
-
